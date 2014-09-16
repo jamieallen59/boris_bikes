@@ -33,4 +33,18 @@ describe DockingStation do
 		fill_station
 		expect(lambda { station.dock(bike) }).to raise_error(RuntimeError)
 	end
+
+	it 'should provide a list of available bikes' do
+		working_bike, broken_bike = Bike.new, Bike.new
+		broken_bike.break!
+		station.dock(working_bike)
+		station.dock(broken_bike)
+		expect(station.available_bikes).to eq ([working_bike])
+	end
 end
+
+
+
+
+
+
