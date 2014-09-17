@@ -13,5 +13,4 @@ class Garage
 		bikes.each { |bike| bike.fix! }
 	end
 
-
 end
