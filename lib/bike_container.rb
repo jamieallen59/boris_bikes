@@ -2,8 +2,6 @@ module BikeContainer
 
 	DEFAULT_CAPACITY = 20
 
-	# attr_accessor :capacity
-
 	def bikes
 		@bikes ||= []
 	end
@@ -22,11 +20,13 @@ module BikeContainer
 
 	def dock(bike)
 		raise "This station is full" if full?
+		raise "You can only dock bikes here" unless bike.is_a? Bike
 		bikes << bike
 	end
 
 	def release(bike)
 		raise "There are no bikes available" if empty?
+		raise "We can only release actual bikes" unless bike.is_a? Bike
 		bikes.delete(bike)
 	end
 

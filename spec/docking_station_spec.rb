@@ -7,7 +7,7 @@ describe DockingStation do
 
 	let (:station) { DockingStation.new(:capacity => 20) }
 
-	it 'should allow a default capacity on initializing' do
+	it 'should have a default capacity on initializing' do
 		expect(station.capacity).to eq 20
 	end
 

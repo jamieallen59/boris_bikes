@@ -66,5 +66,18 @@ shared_examples 'A bike container' do
 				expect(holder.broken_bikes).to eq ([broken_bike])
 			end
 
+			it 'should only dock actual bikes' do
+				expect{ holder.dock(3) }.to raise_error(RuntimeError)
+			end
+
+			it 'should only release actual bikes' do
+				holder.dock(bike)
+				expect{ holder.release("a poodle") }.to raise_error(RuntimeError)
+			end
+
+			it 'should only release a bike if there is room in the destination' do
+				# holder.dock(bike)
+			end
+
 	end
 end

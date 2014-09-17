@@ -16,28 +16,40 @@ describe Van do
 
 
 	it "should have a max capacity of 40" do
-		expect(bikevan).to be_empty
 		(bikevan.capacity).times { bikevan.dock(bike) }
+		
 		expect(bikevan).to be_full
 	end
 
 	it 'should collect broken bikes from the docking station' do
+		docking_station.dock(bike)
 		docking_station.dock(broken_bike)
 		bikevan.collect_broken_bikes_from(docking_station)
+
 		expect(bikevan.bikes).to eq [broken_bike]
 	end
 
 	it 'should drop broken bikes off at the garage' do
+		bikevan.dock(bike)
+		bikevan.dock(broken_bike)
+		bikevan.drop_broken_bikes_at(garage)
 
+		expect(bikevan.bikes).to eq [bike]
+		expect(garage.bikes).to eq [broken_bike]
 	end
 
 	it 'should collect fixed bikes from the garage' do
+		garage.dock(bike)
+		bikevan.collect_working_bikes_from(garage)
 
+		expect(bikevan.bikes).to eq [bike]
 	end
 
 	it 'should drop fixed bikes off at the station' do
+		bikevan.dock(bike)
+		bikevan.drop_working_bikes_at(docking_station)
 
+		expect(docking_station.bikes).to eq [bike]
 	end
-
 
 end
