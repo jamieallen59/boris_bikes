@@ -1,5 +1,7 @@
 class Bike
 
+	# attr_accessor :fix!
+
 	def initialize
 		fix!
 	end

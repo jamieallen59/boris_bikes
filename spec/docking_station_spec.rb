@@ -1,6 +1,9 @@
 require 'docking_station.rb'
+require 'bike_container_spec.rb'
 
 describe DockingStation do
+
+	it_behaves_like 'A bike container'
 
 	let (:station) { DockingStation.new(:capacity => 100) }
 

@@ -2,6 +2,8 @@ module BikeContainer
 
 	DEFAULT_CAPACITY = 20
 
+	# attr_accessor :capacity
+
 	def bikes
 		@bikes ||= []
 	end
@@ -24,7 +26,12 @@ module BikeContainer
 	end
 
 	def release(bike)
+		raise "There are no bikes available" if empty?
 		bikes.delete(bike)
+	end
+
+	def empty?
+		bike_count == 0
 	end
 
 	def full?
@@ -33,6 +40,10 @@ module BikeContainer
 
 	def available_bikes
 		bikes.reject { |bike| bike.broken? }
+	end
+
+	def broken_bikes
+		bikes - available_bikes
 	end
 
 end
