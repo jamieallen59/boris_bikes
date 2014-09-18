@@ -1,9 +1,9 @@
 Boris bikes
 ===========
 
-![](images/boris.jpg)
-
 The Boris bikes program is where we started learning about OOP by building a Boris Bike rental system using Bike, DockingStation, Van, Garage and Person classes.
+
+![](images/boris_1.jpg)
 
 Hopefully the code will be well structured and easy to understand.
 
