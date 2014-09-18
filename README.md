@@ -7,7 +7,7 @@ The Boris bikes program is where we started learning about OOP by building a Bor
 
 Hopefully the code will be well structured and easy to understand.
 
-Here i've completed it in the Chicago style of testing, with no doubles.
+The program is tested in the Chicago style, with no doubles.
 
 ### To run the tests
 ```shell
