@@ -1,6 +1,8 @@
 Boris bikes
 ===========
 
+[![Code Climate](https://codeclimate.com/github/jamieallen59/boris_bikes/badges/gpa.svg)](https://codeclimate.com/github/jamieallen59/boris_bikes)
+
 The Boris bikes program is where we started learning about OOP by building a Boris Bike rental system using Bike, DockingStation, Van, Garage and Person classes.
 
 ![](images/boris_1.jpg)
